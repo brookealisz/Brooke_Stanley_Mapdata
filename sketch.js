@@ -16,7 +16,7 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
-  museums = loadTable('museums.csv','csv','header');
+  museums = loadTable('artmuseums.csv','csv','header');
 }
 
 
@@ -43,7 +43,7 @@ function draw() {
     
     //place tooltip variable here
     var size = museums.getString(i,'Revenue');
-    size = map(size, 1, 5840349457, 1, 25) + myMap.zoom();
+    size = map(size, 1, 5840349457, 1, 10) + myMap.zoom();
     ellipse(pos.x,pos.y,size,size);
     
     if (dist(pos.x, pos.y, mouseX, mouseY) < size) {
